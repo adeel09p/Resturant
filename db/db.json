@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "name": "adeel",
+      "email": "adeel@gmail.com",
+      "password": "adeel123",
+      "id": 1
+    },
+    {
+      "email": "adeel@test.com",
+      "name": "adeel khan",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "email": "ali@gmail.com",
+      "name": "ali",
+      "password": "123",
+      "id": 4
+    }
+  ],
+  "restaurant": [
+    {
+      "name": "KFC-Branch-2",
+      "address": "Karachi",
+      "contact": "122",
+      "id": 2
+    },
+    {
+      "name": "KFC",
+      "address": "KTS",
+      "contact": "12",
+      "id": 3
+    },
+    {
+      "name": "Waqar Resturant",
+      "address": "KTS",
+      "contact": "123",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+<!-- eslint-disable vue/multi-word-component-names -->
+<template>
+<h1>Login </h1>
+  <div class="register">
+    <input type="text" v-model="email" placeholder="Enter Email" />
+    <input type="text" v-model="password" placeholder="Enter password" />
+    <button v-on:click="LOGIN">Login</button>
+    <p>
+      <router-link to="/Up">SIGNUP</router-link>
+    </p>
+  </div>
+</template>
+<script>
+import axios from "axios";
+export default {
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Login",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    async LOGIN() {
+      console.warn(this.email, this.password);
+      let result = await axios.get(
+        `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+      );
+      console.warn(result);
+      if ((result.status == 200) & (result.data.length > 0)) 
+      {
+        localStorage.setItem("user-info", JSON.stringify(result.data[0]));
+                                                        
+                                                        
+                                                        
+                                                        this.$router.push({ name: "Home" });
+      }
+    },
+  },
+  mounted() 
+{
+  let user = localStorage.getItem("user-info");
+  if (user) 
+  {
+    this.$router.push({ name: "Home" });
+  }
+  },
+};
+</script>
